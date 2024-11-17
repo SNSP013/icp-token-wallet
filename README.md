@@ -45,8 +45,35 @@ A decentralized token wallet built on the Internet Computer Protocol (ICP), impl
 To test the smart contract functionalities locally:
 
   1. Modify the Rust code in src/lib.rs to include test functions.
-  2. Run the tests using:
+  2. Run the tests using: cargo test
+
+## **Deployment to Testnet**
+### **Switch to ICP Testnet**
+Update the dfx.json file to include the testnet configuration:
+
+Deploy
 bash
 Copy code
-cargo test
+dfx deploy --network ic
+Interact with Testnet Canister
+Use similar commands as the local replica but with the --network ic flag:
+
+bash
+Copy code
+dfx canister call token_wallet_icp get_balance --network ic '(principal "<your-principal-id>")'
+Future Improvements
+Token Metadata: Extend functionality to include token metadata like name, symbol, and decimals.
+Security Enhancements: Add features like multi-signature transactions and access control.
+Web Interface: Build a frontend for easier interaction with the wallet.
+Contributing
+Contributions are welcome! To contribute:
+
+Fork the repository.
+Create a feature branch (git checkout -b feature-name).
+Commit your changes (git commit -m "Add new feature").
+Push to the branch (git push origin feature-name).
+Open a Pull Request.
+License
+This project is licensed under the MIT License.
+
 
